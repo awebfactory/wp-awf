@@ -2,7 +2,7 @@
 # .gitignore for WordPress @salcode
 # ver 20180808
 # see https://gist.github.com/salcode/b515f520d3f8207ecd04
-# see article 
+# see Sal Ferrarello's article [.gitignore for WordPress](https://salferrarello.com/wordpress-gitignore/)
 #
 # From the root of your project run
 # curl -O https://gist.githubusercontent.com/salcode/b515f520d3f8207ecd04/raw/.gitignore
