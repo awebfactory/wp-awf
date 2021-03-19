@@ -19,6 +19,9 @@ foreach ($legacy_users as $legacy_user) {
   $ID = null;
   //echo $legacy_user['name'] . "\n";
   // if a user with this legacy id (meta attribute) already exist?
+
+  // ref: Find All Users with Certain Meta Data in WordPress,
+  // https://cullenwebservices.com/find-all-users-with-certain-meta-data-in-wordpress/
   $args = array(
     'meta_query' => array(
       array(
@@ -31,8 +34,9 @@ foreach ($legacy_users as $legacy_user) {
   $the_user = get_users($args);
   if ($the_user) {
     // print_r($the_user, false);
-    echo $the_user[0]->user_login;
+    echo 'legacy uid ' . $legacy_user['uid'] . ' already registered as ' . $the_user[0]->user_login . "\n";
   } else {
+    echo 'legacy uid ' . $legacy_user['uid'] . ' not registered.' . "\n";
     // update user
     // retrieve ID
     // create the user 
