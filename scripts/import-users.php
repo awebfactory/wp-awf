@@ -11,12 +11,23 @@ global $argv;
 // $legacy_users = json_decode(file_get_contents('data/inv-users.txt'), true);
 $legacy_users = json_decode(file_get_contents($argv[3]), true);
 
+/* debug to confirm soundness of legacy users input data */
+/*
+foreach ($legacy_users as $legacy_user) {
+  echo "\n\n" . 'Found ' . $legacy_user['uid'] . ': ' . $legacy_user['name'] . "\n";
+}
+exit('found ' . sizeof($legacy_users) . ' legacy users' . "\n\n");
+*/
+
 // print_r($legacy_users, false);
 // print_r($legacy_users[2], false);
 
 // iterate over users and upsert them
 foreach ($legacy_users as $legacy_user) {
-  echo "\n\n" . 'Processing ' . $legacy_user['name'] . "\n";
+  // skip Drupal anonymous and default admin user
+  if ($legacy_user['uid'] < 2) continue;
+
+  echo "\n\n" . 'Processing legacy user ' . $legacy_user['uid'] . ': ' . $legacy_user['name'] . "\n";
 
   // ref: Find All Users with Certain Meta Data in WordPress,
   // https://cullenwebservices.com/find-all-users-with-certain-meta-data-in-wordpress/
@@ -32,29 +43,42 @@ foreach ($legacy_users as $legacy_user) {
   $the_user = get_users($args);
   // if a user with this legacy id (meta attribute) already exists
   if ($the_user) {
-    echo 'legacy uid ' . $legacy_user['uid'] . ' **IS** registered.' . "\n";
+    // already registered, so update
+    echo 'legacy uid ' . $legacy_user['uid'] . ' is already registered as ' . $the_user[0]->user_login . "\n";
+
     // print_r($the_user, false);
-    // retrieve ID
-    echo 'legacy uid ' . $legacy_user['uid'] . ' already registered as ' . $the_user[0]->user_login . "\n";
+    // print_r($the_user[0]->ID);
+
     // update user
-    $user_id = wp_update_user(
-		  array(
-        'ID' => $the_user[0]['ID'],
+    $user_data_array = array(
+        'ID' => $the_user[0]->ID,
 			  'user_email' => $legacy_user['mail'],
 			  'user_login' => $legacy_user['name'],
 			  'role'       => get_legacy_roles($legacy_user['roles']),
-		  )
+    );
+    // print_r($user_data_array, false);
+    $user_id = wp_update_user(
+      $user_data_array
 	  );
+    // echo "user id: ";
+    // print_r($user_id, false);
 
     // On success.
     if ( ! is_wp_error( $user_id ) ) {
-      echo "User updated : ". $user_id;
-        // update meta attributes via ID using:
-        //   update_user_meta( int $user_id, string $meta_key, mixed $meta_value, mixed $prev_value = '' )
-        //   https://developer.wordpress.org/reference/functions/update_user_meta/
-        //   "If the meta field for the user does not exist, it will be added."
+      // update meta attributes via ID using:
+      //   update_user_meta( int $user_id, string $meta_key, mixed $meta_value, mixed $prev_value = '' )
+      //   https://developer.wordpress.org/reference/functions/update_user_meta/
+      //   "If the meta field for the user does not exist, it will be added."
+
+      update_user_meta($user_id, 'legacy_entity', 'awebfactory');
+      update_user_meta($user_id, 'legacy_id', $legacy_user['uid']);
+      echo "legacy_uid updated as ID: ". $user_id . "\n";
+    } else {
+      echo "update user meta fails: ";
+      print_r($user_id, false);
     }
   } else {
+    // Not registered, so create
     echo 'legacy uid ' . $legacy_user['uid'] . ' not registered.' . "\n";
     // print_r($legacy_user, false);
 
@@ -85,7 +109,9 @@ foreach ($legacy_users as $legacy_user) {
 
       // On success.
       if ( ! is_wp_error( $user_id ) ) {
-        echo "User inserted : ". $user_id;
+        update_user_meta($user_id, 'legacy_entity', 'awebfactory');
+        update_user_meta($user_id, 'legacy_id', $legacy_user['uid']);
+        echo "User inserted : ". $user_id . "\n\n";
         // create meta attributes via ID using:
         //   update_user_meta( int $user_id, string $meta_key, mixed $meta_value, mixed $prev_value = '' )
         //   https://developer.wordpress.org/reference/functions/update_user_meta/
