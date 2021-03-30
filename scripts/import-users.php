@@ -2,6 +2,7 @@
 /**
  * execution
  * 
+ * $ wp eval-file scripts/import-users.php data/inv-users.txt
  */
 
 // get file path as command-line argument argument
