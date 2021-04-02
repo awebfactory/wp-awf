@@ -21,6 +21,7 @@ $legacy_stories = json_decode(file_get_contents($argv[3]), true);
 // iterate over users and upsert them
 foreach ($legacy_stories as $legacy_story) {
     $post_title = sanitize_title( $legacy_story['title']);
+    $tags = _get_the_tags($legacy_story['taxonomy']);
     $the_post = array(
         'post_type' => 'post',
         'post_title'    => $post_title,
@@ -36,6 +37,7 @@ foreach ($legacy_stories as $legacy_story) {
         'post_modified' => $dateChanged,
         'post_modified_gmt' => $dateChanged,
         'comment_status' => 'closed',
+        'tags_input' => $tags,
     );
     if ($post_id = post_exists($post_title)) {
         echo "|" . $post_id . "|";
@@ -56,4 +58,14 @@ foreach ($legacy_stories as $legacy_story) {
             echo "\nerror inserting: " . $post_title . "\n"; 
         }
     }
+}
+
+function _get_the_tags($t) {
+    $t_array = array();
+    foreach ($t as $atag) {
+        // print_r($atag, false);
+        // print $atag['name'];
+        array_push($t_array, $atag['name']);
+    }
+    return $t_array;
 }
