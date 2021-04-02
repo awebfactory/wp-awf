@@ -1,5 +1,7 @@
 <?php
 /**
+ * Upsert stories from JSON migration file exported from Drupal 6
+ * 
  * execution
  * 
  * $ wp eval-file scripts/import-stories.php data/inv-stories.json
@@ -35,17 +37,23 @@ foreach ($legacy_stories as $legacy_story) {
         'post_modified_gmt' => $dateChanged,
         'comment_status' => 'closed',
     );
-    if (post_exists($post_title)) {
-        echo ".";
-        // update could be an option if necessary
+    if ($post_id = post_exists($post_title)) {
+        echo "|" . $post_id . "|";
         // add ID to array
+        $the_post['ID'] = $post_id;
         // update post
+        $post_id = wp_update_post($the_post);
+        if ($post_id) {
+            echo "\nupdated: " . $post_title . "\n"; 
+        } else {
+            echo "\nerror updating: " . $post_title . "\n"; 
+        }
     } else {
         $post_id = wp_insert_post($the_post);
         if ($post_id) {
             echo "\ninserted: " . $post_title . "\n"; 
         } else {
-            echo "\nerror: " . $post_title . "\n"; 
+            echo "\nerror inserting: " . $post_title . "\n"; 
         }
     }
 }
