@@ -53,6 +53,7 @@ foreach ($legacy_stories as $legacy_story) {
         // update post
         $post_id = wp_update_post($the_post);
         if ($post_id) {
+            if ($legacy_story['sticky']) stick_post( $post_id );
             echo "\nupdated: " . $post_title . "\n"; 
         } else {
             echo "\nerror updating: " . $post_title . "\n"; 
@@ -60,6 +61,7 @@ foreach ($legacy_stories as $legacy_story) {
     } else {
         $post_id = wp_insert_post($the_post);
         if ($post_id) {
+            if ($legacy_story['sticky']) stick_post( $post_id );
             echo "\ninserted: " . $post_title . "\n"; 
         } else {
             echo "\nerror inserting: " . $post_title . "\n"; 
