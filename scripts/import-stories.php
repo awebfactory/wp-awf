@@ -25,18 +25,22 @@ foreach ($legacy_stories as $legacy_story) {
     $the_post = array(
         'post_type' => 'post',
         'post_title'    => $post_title,
-        'post_name'    => 'node/' . $legacy_story['nid'],
+        // prepare for custom legacy permalink: node
+        'post_name'    => $legacy_story['nid'],
         'post_content'  => $legacy_story['body'],
         'post_excerpt' => $legacy_story['teaser'],
         'post_status' => $legacy_story['status'] == 1 ? 'publish' : 'draft',
-        'post_author'   => 1,
-
-
+        // victorkane, entered via import users script
+        'post_author'   => 3,
         'post_date' => $dateCreated,
         'post_date_gmt' => $dateCreated,
         'post_modified' => $dateChanged,
         'post_modified_gmt' => $dateChanged,
         'comment_status' => 'closed',
+        // doesn't work
+        // 'tax_input' => array( 'category' => ['node'] ),
+        // so, create category interactively, then the following works
+        'post_category' => array( 88 ),
         'tags_input' => $tags,
     );
     if ($post_id = post_exists($post_title)) {
