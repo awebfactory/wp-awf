@@ -26,7 +26,7 @@ foreach ($legacy_stories as $legacy_story) {
         'post_type' => 'post',
         'post_title'    => $post_title,
         // prepare for custom legacy permalink: node
-        'post_name'    => $legacy_story['nid'],
+        'post_name'    => strval($legacy_story['nid']),
         'post_content'  => $legacy_story['body'],
         'post_excerpt' => $legacy_story['teaser'],
         'post_status' => $legacy_story['status'] == 1 ? 'publish' : 'draft',
