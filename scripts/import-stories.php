@@ -16,11 +16,10 @@ $legacy_stories = json_decode(file_get_contents($argv[3]), true);
 // print_r($legacy_stories, false);
 // print count($legacy_stories) . "\n";
 
-
-
 // iterate over users and upsert them
 foreach ($legacy_stories as $legacy_story) {
-    $post_title = sanitize_title( $legacy_story['title']);
+    // $post_title = sanitize_title( $legacy_story['title']);
+    $post_title = $legacy_story['title'];
     $tags = _get_the_tags($legacy_story['taxonomy']);
     $dateCreated = date('Y-m-d H:i:s', $legacy_story['created']);
     $dateChanged = date('Y-m-d H:i:s', $legacy_story['changed']);

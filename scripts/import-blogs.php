@@ -20,7 +20,8 @@ $legacy_blogs = json_decode(file_get_contents($argv[3]), true);
 
 // iterate over users and upsert them
 foreach ($legacy_blogs as $legacy_blog) {
-    $post_title = sanitize_title( $legacy_blog['title']);
+    // $post_title = sanitize_title( $legacy_blog['title']);
+    $post_title = $legacy_blog['title'];
     $tags = _get_the_tags($legacy_blog['taxonomy']);
     $dateCreated = date('Y-m-d H:i:s', $legacy_blog['created']);
     $dateChanged = date('Y-m-d H:i:s', $legacy_blog['changed']);
