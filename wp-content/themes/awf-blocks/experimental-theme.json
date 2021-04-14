@@ -1,34 +1,47 @@
 {
-	"settings": {
-		"defaults": {
-			"color": {
-				"gradients": [ ],
-				"link": true,
-				"palette": [ ]
-			},
-			"spacing": {
-				"customPadding": true
-			},
-			"typography": {
-				"customLineHeight": true,
-				"fontFamilies": [ ],
-				"fontSizes": [ ]
-			},
-			"custom": {
-				"width": {
-					"default": "840px",
-					"wide": "1100px"
-				},
-				"margin": {
-					"horizontal": "14px"
-				}
-			}
-		}
-	},
-	"styles": {
-		"root": {
-			"color": { },
-			"typography": { }
-		}
-	}
+  "settings": {
+    "defaults": {
+      "color": {
+        "gradients": [],
+        "link": true,
+        "palette": []
+      },
+      "spacing": {
+        "customPadding": true
+      },
+      "typography": {
+        "customLineHeight": true,
+        "fontFamilies": [
+          {
+            "fontFamily": "\"Crete Round\",sans-serif",
+            "slug": "crete-round",
+            "name": "Crete Round"
+          },
+          {
+            "fontFamily": "\"PT Sans\",sans-serif",
+            "slug": "pt-sans",
+            "name": "PT Sans"
+          }
+        ],
+        "fontSizes": []
+      },
+      "custom": {
+        "width": {
+          "default": "840px",
+          "wide": "1100px"
+        },
+        "margin": {
+          "horizontal": "14px"
+        }
+      }
+    }
+  },
+  "styles": {
+    "root": {
+      "color": {},
+      "typography": {
+        "fontFamily": "var(--wp--preset--font-family--pt-sans)"
+      }
+    }
+  }
 }

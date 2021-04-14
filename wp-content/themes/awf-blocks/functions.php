@@ -36,6 +36,15 @@ function awf_blocks_scripts() {
 	wp_enqueue_style( 'awf-blocks-style', get_template_directory_uri() . '/style.css', array(), wp_get_theme()->get( 'Version' ) );
 
 	// Enqueue alignments stylesheet.
-	wp_enqueue_style( 'awf-blocks-alignments-style', get_template_directory_uri() . '/assets/alignments-front.css', array(), wp_get_theme()->get( 'Version' ) );
+	wp_enqueue_style( 'awf-blocks-alignments-style', get_template_directory_uri() . '/assets/css/alignments-front.css', array(), wp_get_theme()->get( 'Version' ) );
 }
 add_action( 'wp_enqueue_scripts', 'awf_blocks_scripts' );
+
+/**
+* Enqueue theme fonts.
+*/
+function awf_blocks_theme_fonts() {
+	wp_enqueue_style( 'awf_blocks-theme-fonts', get_template_directory_uri() . '/assets/css/theme-fonts.css', array(), wp_get_theme()->get( 'Version' ) );
+}
+add_action( 'wp_enqueue_scripts', 'awf_blocks_theme_fonts', 1 );
+add_action( 'enqueue_block_editor_assets', 'awf_blocks_theme_fonts', 1 );
