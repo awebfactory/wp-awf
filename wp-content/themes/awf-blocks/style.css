@@ -16,3 +16,7 @@ awf-blocks theme, (C) 2021 Victor Kane, is distributed under the terms of the GN
 awf-blocks was scaffolded from Empty Theme WordPress Theme, (https://github.com/WordPress/theme-experiments/tree/master/emptytheme)
   using `new-empty-theme.php` (https://github.com/WordPress/theme-experiments/blob/master/new-empty-theme.php)
 */
+
+.wp-block-site-logo:not(.is-resized) img {
+    width: 100%;
+}
