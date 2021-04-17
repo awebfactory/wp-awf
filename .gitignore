@@ -112,7 +112,8 @@ Thumbs.db
 # !wp-content/plugins/example-plugin/
 # !wp-content/themes/example-theme/
 
-!wp-content/themes/awf-blocks/
+# stop tracking pure fse block based theme
+# !wp-content/themes/awf-blocks/
 
 # track wp-cli scripts
 !scripts
