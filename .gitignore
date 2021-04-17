@@ -115,5 +115,7 @@ Thumbs.db
 # stop tracking pure fse block based theme
 # !wp-content/themes/awf-blocks/
 
+!wp-content/themes/awf-block-ready/
+
 # track wp-cli scripts
 !scripts
