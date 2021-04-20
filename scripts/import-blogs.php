@@ -44,7 +44,7 @@ foreach ($legacy_blogs as $legacy_blog) {
         // doesn't work
         // 'tax_input' => array( 'category' => ['node'] ),
         // so, create category interactively, then the following works
-        'post_category' => array( 88 ),
+        'post_category' => array( 45 ),
         'tags_input' => $tags,
     );
     if ($post_id = post_exists($post_title)) {
