@@ -18,3 +18,7 @@ Requires PHP: 7.0
 This theme, like WordPress, is licensed under the GPL.
 AWF Block Ready theme, (C) 2021 Victor Kane, is distributed under the terms of the GNU GPL.
 */
+
+.entry-header a {
+  color: #99cc66 !important;
+}
