@@ -19,6 +19,13 @@ This theme, like WordPress, is licensed under the GPL.
 AWF Block Ready theme, (C) 2021 Victor Kane, is distributed under the terms of the GNU GPL.
 */
 
+.has-primary-title h1.page-title {
+  background-image: url(/wp-content/uploads/2015/02/session-drupalcon-la-2015-bogota.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right;
+}
+
 .blog header.page-header {
   display: none;
 }
