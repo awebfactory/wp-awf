@@ -19,6 +19,13 @@ This theme, like WordPress, is licensed under the GPL.
 AWF Block Ready theme, (C) 2021 Victor Kane, is distributed under the terms of the GNU GPL.
 */
 
+/* General: use accent color for links */
+.entry-header a {
+  color: #99cc66 !important;
+}
+
+/* Homepage: Show background image instead of page-title */
+
 .home h1.page-title {
   background-image: url(/wp-content/uploads/2015/02/session-drupalcon-la-2015-bogota.png);
   background-repeat: no-repeat;
@@ -26,12 +33,19 @@ AWF Block Ready theme, (C) 2021 Victor Kane, is distributed under the terms of t
   background-position: center;
 }
 
+/* Blog page: Do not show page title "Blog" */
+
 .blog header.page-header {
   display: none;
 }
+
+/* Blog page: Reduce whitespace " */
+
 .blog .content-area {
   padding: 1em 0 var(--content_padding) 0;
 }
+
+/* Blog page: Styling for featured posts at top of page */
 
 .featured-posts img {
   display: none;
@@ -54,8 +68,4 @@ AWF Block Ready theme, (C) 2021 Victor Kane, is distributed under the terms of t
 .posts article.tag-featured {
   border-top: 10px solid;
   border-color: #fdbd50;
-}
-
-.entry-header a {
-  color: #99cc66 !important;
 }
