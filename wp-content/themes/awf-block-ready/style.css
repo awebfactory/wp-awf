@@ -25,7 +25,7 @@ html {
   border-bottom: 0;
 }
 
-/* sticky header */
+/* sticky menu (start) */
 .site-header-section {
   position: fixed;
   background-color: white;
@@ -49,6 +49,7 @@ main {
 .entry-header a {
   color: #99cc66 !important;
 }
+/* sticky menu (end) */
 
 /* Homepage: Show background image instead of page-title */
 .home h1.page-title {
@@ -78,6 +79,7 @@ body.home nav#site-navigation #menu-primary li.menu-item-type-custom a {
 }
 
 /* Blog page: Styling for featured posts at top of page */
+/* at least until we get some nice pictures */
 .featured-posts img {
   display: none;
 }
