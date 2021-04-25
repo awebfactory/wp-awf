@@ -19,34 +19,65 @@ This theme, like WordPress, is licensed under the GPL.
 AWF Block Ready theme, (C) 2021 Victor Kane, is distributed under the terms of the GNU GPL.
 */
 
+/* no 10px colored border on top of pages */
+html {
+  border-top: 0;
+  border-bottom: 0;
+}
+
+/* sticky header */
+.site-header-section {
+  position: fixed;
+  background-color: white;
+  width: 100%;
+}
+.site-branding {
+  padding-top: 2vh;
+  padding-bottom: 6vh;
+}
+button#modal-search-toggle {
+  width: 0;
+}
+.site-content {
+  padding-top: 14vh;
+}
+main {
+  padding-top: 14vh;
+}
+
 /* General: use accent color for links */
 .entry-header a {
   color: #99cc66 !important;
 }
 
 /* Homepage: Show background image instead of page-title */
-
 .home h1.page-title {
   background-image: url(/wp-content/uploads/2015/02/session-drupalcon-la-2015-bogota.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
+/* Main menu is the only one, so we change it for homepage */
+/* If not home, do not show internal links for smooth scrolling */
+body:not(.home) nav#site-navigation #menu-primary .menu-item-type-custom {
+  display: none;
+}
+body.home nav#site-navigation #menu-primary li.menu-item-type-custom a {
+  color: #99cc66 !important;
+  font-weight: 700;
+}
 
 /* Blog page: Do not show page title "Blog" */
-
 .blog header.page-header {
   display: none;
 }
 
 /* Blog page: Reduce whitespace " */
-
 .blog .content-area {
   padding: 1em 0 var(--content_padding) 0;
 }
 
 /* Blog page: Styling for featured posts at top of page */
-
 .featured-posts img {
   display: none;
 }
@@ -58,14 +89,14 @@ AWF Block Ready theme, (C) 2021 Victor Kane, is distributed under the terms of t
   /* color: #ffe9ca; */
   background-color: #996633;
   border-top: 10px solid;
-  border-bottom: 10px solid;
+  /* border-bottom: 10px solid; */
   border-color: #fdbd50;
 }
 .featured-posts article.tag-featured .entry-header a {
   color: #fdbd50 !important;
 }
-
 .posts article.tag-featured {
   border-top: 10px solid;
   border-color: #fdbd50;
+  padding-top: 0;
 }
