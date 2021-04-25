@@ -53,10 +53,11 @@ main {
 
 /* Homepage: Show background image instead of page-title */
 .home h1.page-title {
-  background-image: url(/wp-content/uploads/2015/02/session-drupalcon-la-2015-bogota.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+  background: url(/wp-content/uploads/2015/02/session-drupalcon-la-2015-bogota.png)
+    no-repeat center center;
+  background-size: contain;
+  background-position: center center;
+  width: 100%;
 }
 /* Main menu is the only one, so we change it for homepage */
 /* If not home, do not show internal links for smooth scrolling */
