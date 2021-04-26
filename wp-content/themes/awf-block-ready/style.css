@@ -164,3 +164,13 @@ body.home nav#site-navigation #menu-primary li.menu-item-type-custom a {
 .awf-footer-docs a {
   text-decoration-line: underline;
 }
+/* Site info footer */
+.site-info-section {
+  padding-top: 0;
+  padding-bottom: 0;
+  line-height: 1.2em;
+  text-align: center;
+}
+.site-info-item {
+  width: auto;
+}
