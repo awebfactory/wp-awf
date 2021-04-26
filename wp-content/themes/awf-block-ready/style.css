@@ -128,3 +128,17 @@ body.home nav#site-navigation #menu-primary li.menu-item-type-custom a {
   border-color: #fdbd50;
   padding-top: 0;
 }
+
+/* AWebFactory 404 Page (made with a block, thanks to Michelle theme! */
+.error404 header {
+  display: none;
+}
+.error404 #main {
+  padding-top: 2vh;
+}
+.error404 .content-area {
+  padding-top: 0;
+}
+.error404 .site-content {
+  padding-top: 0;
+}
