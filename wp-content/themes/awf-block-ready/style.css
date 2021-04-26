@@ -156,3 +156,11 @@ body.home nav#site-navigation #menu-primary li.menu-item-type-custom a {
 .error404 .site-content {
   padding-top: 0;
 }
+
+/* Footer */
+/* Links */
+.awf-footer-work a,
+.awf-footer-copyright a,
+.awf-footer-docs a {
+  text-decoration-line: underline;
+}
