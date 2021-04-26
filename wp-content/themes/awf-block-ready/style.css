@@ -50,14 +50,39 @@ main {
   color: #99cc66 !important;
 }
 /* sticky menu (end) */
-
 /* Homepage: Show background image instead of page-title */
 .home h1.page-title {
-  background: url(/wp-content/uploads/2015/02/session-drupalcon-la-2015-bogota.png)
-    no-repeat center center;
+  background: url(/wp-content/uploads/2021/04/awf-status.png) no-repeat center
+    center;
   background-size: contain;
   background-position: center center;
   width: 100%;
+}
+.home .entry-summary {
+  color: #99cc66;
+  /* background-color: #ffddac; */
+  background-color: black;
+}
+.home .entry-summary .hp-msg-top-bar {
+  width: 100%;
+  text-align: center;
+  color: white;
+  background-color: black;
+}
+/* spacer */
+.home .entry-summary p.hp-msg-codeblock {
+  line-height: 0.25em;
+}
+.home .entry-summary .hp-msg-codeblock {
+  padding: 0 0.25em;
+  /* line-height: 1.4em; */
+}
+.home .entry-summary .hp-msg-bottom-bar {
+  width: 100%;
+  text-align: center;
+  color: white;
+  background-color: black;
+  margin-top: 1em;
 }
 /* Main menu is the only one, so we change it for homepage */
 /* If not home, do not show internal links for smooth scrolling */
