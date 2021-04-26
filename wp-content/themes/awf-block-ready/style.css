@@ -19,6 +19,13 @@ This theme, like WordPress, is licensed under the GPL.
 AWF Block Ready theme, (C) 2021 Victor Kane, is distributed under the terms of the GNU GPL.
 */
 
+/* General */
+
+/* use accent color for links */
+.entry-header a {
+  color: #99cc66 !important;
+}
+
 /* no 10px colored border on top of pages */
 html {
   border-top: 0;
@@ -44,13 +51,16 @@ button#modal-search-toggle {
 main {
   padding-top: 14vh;
 }
-
-/* General: use accent color for links */
-.entry-header a {
-  color: #99cc66 !important;
-}
 /* sticky menu (end) */
-/* Homepage: Show background image instead of page-title */
+
+/* Homepage */
+
+/* Top whitespace */
+.home .content-area {
+  padding-top: 4vh;
+}
+
+/* Show background image instead of page-title */
 .home h1.page-title {
   background: url(/wp-content/uploads/2021/04/awf-status.png) no-repeat center
     center;
@@ -58,6 +68,9 @@ main {
   background-position: center center;
   width: 100%;
 }
+
+/* Home msg area */
+
 .home .entry-summary {
   color: #99cc66;
   /* background-color: #ffddac; */
@@ -84,6 +97,7 @@ main {
   background-color: black;
   margin-top: 1em;
 }
+
 /* Main menu is the only one, so we change it for homepage */
 /* If not home, do not show internal links for smooth scrolling */
 body:not(.home) nav#site-navigation #menu-primary .menu-item-type-custom {
