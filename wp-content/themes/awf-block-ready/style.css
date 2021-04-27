@@ -158,14 +158,9 @@ body.home nav#site-navigation #menu-primary li.menu-item-type-custom a {
 }
 
 /* Footer */
-/* Links */
-.awf-footer-work a,
-.awf-footer-copyright a,
-.awf-footer-docs a {
-  text-decoration-line: underline;
-}
 /* Site info footer */
 .site-info-section {
+  background-color: #996633;
   padding-top: 0;
   padding-bottom: 0;
   line-height: 1.2em;
@@ -173,4 +168,10 @@ body.home nav#site-navigation #menu-primary li.menu-item-type-custom a {
 }
 .site-info-item {
   width: auto;
+}
+/* Links */
+.awf-footer-work a,
+.awf-footer-copyright a,
+.awf-footer-docs a {
+  text-decoration-line: underline;
 }
