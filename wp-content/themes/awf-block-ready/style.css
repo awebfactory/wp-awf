@@ -62,11 +62,29 @@ main {
 
 /* Show background image instead of page-title */
 .home h1.page-title {
+  display: none;
+  /*
   background: url(/wp-content/uploads/2021/04/awf-status.png) no-repeat center
     center;
   background-size: contain;
   background-position: center center;
   width: 100%;
+*/
+}
+.home .page-summary p.forkus {
+  background: url(/wp-content/uploads/2021/04/awf-status.png) no-repeat center
+    center;
+  background-size: cover;
+  background-position: center center;
+  width: 100%;
+  height: 6em;
+  text-align: center;
+  padding-top: 2em;
+}
+.home .page-summary p.forkus a {
+  padding: 1em 1em 1.5em 1em;
+  border-radius: 50%;
+  background: #eee;
 }
 
 /* Home msg area */
