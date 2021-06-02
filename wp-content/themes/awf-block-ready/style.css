@@ -23,7 +23,9 @@ AWF Block Ready theme, (C) 2021 Victor Kane, is distributed under the terms of t
 
 /* use accent color for links */
 .entry-header a {
-  color: #99cc66 !important;
+  /* color: #99cc66 !important; */
+  /* color: #52861c !important; */
+  color: #72a83b !important;
 }
 
 /* no 10px colored border on top of pages */
@@ -127,7 +129,9 @@ body:not(.home) nav#site-navigation #menu-primary .menu-item-type-custom {
 }
 */
 body.home nav#site-navigation #menu-primary li.menu-item-type-custom a {
-  color: #99cc66 !important;
+  /* color: #99cc66 !important; */
+  /* color: #52861c !important; */
+  color: #72a83b !important;
   font-weight: 700;
 }
 
