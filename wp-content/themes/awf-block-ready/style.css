@@ -118,9 +118,14 @@ main {
 
 /* Main menu is the only one, so we change it for homepage */
 /* If not home, do not show internal links for smooth scrolling */
+body:not(.home) nav#site-navigation #menu-primary .home-menu-scroll {
+  display: none;
+}
+/*
 body:not(.home) nav#site-navigation #menu-primary .menu-item-type-custom {
   display: none;
 }
+*/
 body.home nav#site-navigation #menu-primary li.menu-item-type-custom a {
   color: #99cc66 !important;
   font-weight: 700;
