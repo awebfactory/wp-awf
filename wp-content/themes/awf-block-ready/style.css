@@ -22,10 +22,19 @@ AWF Block Ready theme, (C) 2021 Victor Kane, is distributed under the terms of t
 /* General */
 
 /* use accent color for links */
+
+nav a,
 .entry-header a {
   /* color: #99cc66 !important; */
-  /* color: #52861c !important; */
   color: #72a83b !important;
+  /* color: #52861c !important; */
+}
+.home-menu-scroll {
+  background-color: #734416 !important;
+}
+.home-menu-scroll a {
+  /* color: #996633 !important; */
+  color: #734416 !important;
 }
 
 /* no 10px colored border on top of pages */
@@ -51,8 +60,9 @@ button#modal-search-toggle {
   padding-top: 14vh;
 }
 main {
-  padding-top: 14vh;
+  /*  padding-top: 14vh; */
 }
+
 /* sticky menu (end) */
 
 /* Homepage */
@@ -146,6 +156,9 @@ body.home nav#site-navigation #menu-primary li.menu-item-type-custom a {
 }
 
 /* Blog page: Styling for featured posts at top of page */
+.featured-posts-section {
+  padding-top: 4vh;
+}
 /* at least until we get some nice pictures */
 .featured-posts img {
   display: none;
@@ -190,9 +203,23 @@ body.home nav#site-navigation #menu-primary li.menu-item-type-custom a {
   background-color: #996633;
   padding-top: 0;
   padding-bottom: 0;
-  line-height: 1.2em;
+  line-height: 1.2rem;
+  height: 2rem;
   text-align: center;
 }
+.site-info {
+  padding-top: 0.5rem;
+}
+/* sticky go-to-top arrow */
+.site-info-item .back-to-top {
+  bottom: 0;
+  position: fixed;
+  z-index: 150;
+  margin-bottom: 1rem;
+  background: #996633;
+  opacity: 0.5;
+}
+
 .site-info-item {
   width: auto;
 }
