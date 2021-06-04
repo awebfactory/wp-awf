@@ -69,11 +69,13 @@ main {
 
 /* Top whitespace */
 .home .content-area {
-  padding-top: 4vh;
+  padding-top: 0;
 }
 
+/* opted to not show page title on home, get rid of padding also
+.home h1.page-title,
 /* Show background image instead of page-title */
-.home h1.page-title {
+.page-id-615 h1.page-title {
   display: none;
   /*
   background: url(/wp-content/uploads/2021/04/awf-status.png) no-repeat center
@@ -83,7 +85,7 @@ main {
   width: 100%;
 */
 }
-.home .page-summary p.forkus {
+.page-id-615 .page-summary p.forkus {
   background: url(/wp-content/uploads/2021/04/awf-status.png) no-repeat center
     center;
   background-size: cover;
@@ -93,34 +95,34 @@ main {
   text-align: center;
   padding-top: 2em;
 }
-.home .page-summary p.forkus a {
+.page-id-615 .page-summary p.forkus a {
   padding: 1em 1em 1.5em 1em;
   border-radius: 50%;
   background: #eee;
 }
 
-/* Home msg area */
+/* Colophon msg area */
 
-.home .entry-summary {
+.page-id-615 .entry-summary {
   color: #99cc66;
   /* background-color: #ffddac; */
   background-color: black;
 }
-.home .entry-summary .hp-msg-top-bar {
+.page-id-615 .entry-summary .hp-msg-top-bar {
   width: 100%;
   text-align: center;
   color: white;
   background-color: black;
 }
 /* spacer */
-.home .entry-summary p.hp-msg-codeblock {
+.page-id-615 .entry-summary p.hp-msg-codeblock {
   line-height: 0.25em;
 }
-.home .entry-summary .hp-msg-codeblock {
+.page-id-615 .entry-summary .hp-msg-codeblock {
   padding: 0 0.25em;
   /* line-height: 1.4em; */
 }
-.home .entry-summary .hp-msg-bottom-bar {
+.page-id-615 .entry-summary .hp-msg-bottom-bar {
   width: 100%;
   text-align: center;
   color: white;
